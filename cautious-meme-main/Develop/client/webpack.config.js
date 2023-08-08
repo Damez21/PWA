@@ -22,7 +22,17 @@ module.exports = () => {
         template: './index.html',
         title: 'Webpack Plugin',
       }),
-      new WorkboxPlugin.GenerateSW()
+      new WorkboxPlugin.GenerateSW(),
+
+      new WebpackPwaManifest({
+        fingerprints: false,
+        name: "Just Another Text Editor",
+        short_name: "JATE",
+        description: "PWA",
+        start_url: "./",
+        publicPath: "./",
+        
+      })
     ],
 
     module: {
